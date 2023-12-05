@@ -1,0 +1,154 @@
+version: api.keploy.io/v1beta1
+name: report-9
+status: FAILED
+success: 0
+failure: 1
+total: 1
+tests:
+    - kind: Http
+      name: report-9
+      status: FAILED
+      started: 1701343802
+      completed: 1701343802
+      test_case_path: /home/pranshu.linux/pranshu/samples-python/django-postgres/django_postgres/keploy/test-set-1
+      mock_path: ""
+      test_case_id: test-1
+      req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://127.0.0.1:8000/user/
+        header:
+            Accept: '*/*'
+            Host: 127.0.0.1:8000
+            User-Agent: curl/7.81.0
+        body: ""
+        body_type: ""
+        timestamp: 0001-01-01T00:00:00Z
+      resp:
+        status_code: 200
+        header:
+            Allow: GET, OPTIONS, POST
+            Content-Length: "31"
+            Content-Type: application/json
+            Cross-Origin-Opener-Policy: same-origin
+            Date: Thu, 30 Nov 2023 11:20:11 GMT
+            Referrer-Policy: same-origin
+            Server: WSGIServer/0.2 CPython/3.10.12
+            Vary: Accept, Cookie
+            X-Content-Type-Options: nosniff
+            X-Frame-Options: DENY
+        body: '{"message": "No Users Found!!"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 0001-01-01T00:00:00Z
+      noise:
+        header.Date: []
+        header.Vary: []
+      result:
+        status_code:
+            normal: true
+            expected: 200
+            actual: 200
+        headers_result:
+            - normal: true
+              expected:
+                key: Referrer-Policy
+                value:
+                    - same-origin
+              actual:
+                key: Referrer-Policy
+                value:
+                    - same-origin
+            - normal: true
+              expected:
+                key: X-Content-Type-Options
+                value:
+                    - nosniff
+              actual:
+                key: X-Content-Type-Options
+                value:
+                    - nosniff
+            - normal: true
+              expected:
+                key: X-Frame-Options
+                value:
+                    - DENY
+              actual:
+                key: X-Frame-Options
+                value:
+                    - DENY
+            - normal: false
+              expected:
+                key: Allow
+                value:
+                    - GET
+                    - ' OPTIONS'
+                    - ' POST'
+              actual:
+                key: Allow
+                value:
+                    - OPTIONS, POST, GET
+            - normal: true
+              expected:
+                key: Content-Length
+                value:
+                    - "31"
+              actual:
+                key: Content-Length
+                value:
+                    - "31"
+            - normal: true
+              expected:
+                key: Vary
+                value:
+                    - Accept, Cookie
+              actual:
+                key: Vary
+                value:
+                    - Accept, Cookie
+            - normal: true
+              expected:
+                key: Content-Type
+                value:
+                    - application/json
+              actual:
+                key: Content-Type
+                value:
+                    - application/json
+            - normal: true
+              expected:
+                key: Cross-Origin-Opener-Policy
+                value:
+                    - same-origin
+              actual:
+                key: Cross-Origin-Opener-Policy
+                value:
+                    - same-origin
+            - normal: true
+              expected:
+                key: Date
+                value:
+                    - Thu, 30 Nov 2023 11:20:11 GMT
+              actual:
+                key: Date
+                value:
+                    - Thu, 30 Nov 2023 11:30:02 GMT
+            - normal: true
+              expected:
+                key: Server
+                value:
+                    - WSGIServer/0.2 CPython/3.10.12
+              actual:
+                key: Server
+                value:
+                    - WSGIServer/0.2 CPython/3.10.12
+        body_result:
+            - normal: true
+              type: JSON
+              expected: '{"message": "No Users Found!!"}'
+              actual: '{"message": "No Users Found!!"}'
+        dep_result: []
+test_set: test-set-1

@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-1
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://127.0.0.1:8000/user/
+        header:
+            Accept: '*/*'
+            Host: 127.0.0.1:8000
+            User-Agent: curl/7.81.0
+        body: ""
+        body_type: ""
+    resp:
+        status_code: 200
+        header:
+            Allow: GET, OPTIONS, POST
+            Content-Length: "31"
+            Content-Type: application/json
+            Cross-Origin-Opener-Policy: same-origin
+            Date: Thu, 30 Nov 2023 11:20:11 GMT
+            Referrer-Policy: same-origin
+            Server: WSGIServer/0.2 CPython/3.10.12
+            Vary: Accept, Cookie
+            X-Content-Type-Options: nosniff
+            X-Frame-Options: DENY
+        body: '{"message": "No Users Found!!"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+            header.Vary: []
+    created: 1701343213
+curl: |
+    curl --request GET \
+      --url http://127.0.0.1:8000/user/ \
+      --header 'Host: 127.0.0.1:8000' \
+      --header 'User-Agent: curl/7.81.0' \
+      --header 'Accept: */*' \
