@@ -1,7 +1,3 @@
--- Attempt to connect to 'usersdb', if it doesn't exist, connect to the default 'postgres' database
-\c usersdb ON_ERROR_STOP on
-\c postgres
-
 -- Check if the database exists and create it if it doesn't
 SELECT 'CREATE DATABASE usersdb'
 WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'usersdb')\gexec
